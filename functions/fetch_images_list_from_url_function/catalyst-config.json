@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "fetch_images_list_from_url_function",
+		"stack": "node14",
+		"type": "basicio"
+	},
+	"execution": {
+		"main": "fetchimagesfromurl.js"
+	}
+}

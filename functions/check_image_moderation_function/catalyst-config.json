@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "check_image_moderation_function",
+		"stack": "node14",
+		"type": "basicio"
+	},
+	"execution": {
+		"main": "check_image_moderation.js"
+	}
+}

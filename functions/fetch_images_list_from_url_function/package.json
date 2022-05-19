@@ -1,0 +1,10 @@
+{
+	"name": "fetch_images_list_from_url_function",
+	"version": "1.0.0",
+	"main": "fetchimagesfromurl.js",
+	"author": "shankarr+1001@zohocorp.com",
+	"dependencies": {
+		"axios": "^0.22.0",
+		"zcatalyst-sdk-node": "latest"
+	}
+}

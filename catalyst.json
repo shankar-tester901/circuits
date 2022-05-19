@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "targets": [
+      "fetch_images_list_from_url_function",
+      "check_image_moderation_function",
+      "image_resize_function",
+      "render_resized_images_function"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

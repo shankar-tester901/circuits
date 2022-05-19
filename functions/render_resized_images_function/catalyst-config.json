@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "render_resized_images_function",
+		"stack": "node14",
+		"type": "advancedio"
+	},
+	"execution": {
+		"main": "renderResizedImages.js"
+	}
+}

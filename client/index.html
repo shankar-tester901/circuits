@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Image Resizer via Circuits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <script src="https://static.zohocdn.com/catalyst/sdk/js/3.0.0/catalystWebSDK.js"></script>
+    <script src="/__catalyst/sdk/init.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <center>
+        <h1>Image Processing and Resizing via Circuits</h1>
+        <button onclick="triggerCircuit()">Fetch Images and begin processing</button><br>
+        <p id="status"></p>
+        <h3>(Images will be processed via Image Moderation)</h3>
+        <button onclick="getImages()">Display processed Images</button><br><br>
+    </center>
+    <center>
+        <h3 id="message"></h3>
+        <div id="right_part" style="visibility: hidden;">
+            <h4>All Images including NSFW</h4>
+            <div class="slideshow-container" id="actualImages">
+
+                <div class="mySlides fade">
+                    <img id="sample" src="processing.gif" style="width:50%">
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+            </div>
+        </div>
+
+        <!--RESIZED IMAGES-->
+
+        <div id="left_part" style="visibility: hidden;">
+            <h4>Processed and Resized Images which are SFW</h3>
+                <div class="slideshow-container" id="resizedImages">
+
+                    <div class="mySlidez fade">
+                        <img id="samplez" src="processing.gif" style="width:50%">
+                    </div>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dotz" onclick="currentSlidez(1)"></span>
+                </div>
+        </div>
+    </center>
+
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+
+        var slidezIndex = 1;
+        showSlidez(slidezIndex);
+
+        function plusSlidez(n) {
+            showSlidez(slidezIndex += n);
+        }
+
+        function currentSlidez(n) {
+            showSlidez(slidezIndex = n);
+        }
+
+        function showSlidez(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlidez");
+            var dots = document.getElementsByClassName("dotz");
+            if (n > slides.length) { slidezIndex = 1 }
+            if (n < 1) { slidezIndex = slides.length }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slidezIndex - 1].style.display = "block";
+            dots[slidezIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
